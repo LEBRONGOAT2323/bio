@@ -183,6 +183,19 @@
     audio {
         display: none;
     }
+
+    #version {
+    margin-top: 10px;
+    font-size: 11px;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 8px;
+    background: rgba(127, 90, 240, 0.12);
+    border: 1px solid rgba(127, 90, 240, 0.25);
+    backdrop-filter: blur(10px);
+}
 </style>
 </head>
 
@@ -224,6 +237,20 @@
         
         <audio id="audio" src="babydoll.mp3"></audio>
     </div>
+
+    <div id="version">v...</div>
+
+<script>
+fetch("https://api.github.com/repos/LEBRONGOAT2323/bio/releases/latest")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("version").innerText = data.tag_name;
+  })
+  .catch(() => {
+    document.getElementById("version").innerText = "v1.0";
+  });
+</script>
+
 </div>
 
 <script>
