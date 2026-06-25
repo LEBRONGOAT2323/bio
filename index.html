@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio | LEBRONGOAT2323</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at top, #1a1a2e, #0f0f1a, #000);
+        color: white;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 360px;
+        padding: 24px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        text-align: center;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .pfp {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px;
+    border: 2px solid rgba(127, 90, 240, 0.4);
+    box-shadow: 0 0 20px rgba(127, 90, 240, 0.2);
+}
+
+    h1 {
+        font-size: 20px;
+        margin: 8px 0 4px;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 13px;
+        opacity: 0.7;
+        margin-bottom: 16px;
+    }
+
+    .glow {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(127,90,240,0.25), transparent 60%);
+        filter: blur(60px);
+        z-index: -1;
+    }
+
+    .bio {
+        font-size: 13px;
+        opacity: 0.75;
+        margin-bottom: 16px;
+        line-height: 1.4;
+    }
+
+    .skills {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 12px;
+        opacity: 0.55;
+        letter-spacing: 0.5px;
+    }
+
+    .music-player {
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(18px);
+        box-shadow: inset 0 0 25px rgba(0,0,0,0.4);
+        text-align: left;
+    }
+
+    .now-playing {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        opacity: 0.7;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        background: #2cb67d;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #2cb67d;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.4); opacity: 0.5; }
+    }
+
+    .track .title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .track .artist {
+        font-size: 11px;
+        opacity: 0.5;
+        margin-bottom: 10px;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .bar {
+        flex: 1;
+        height: 3px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .progress {
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #7f5af0, #2cb67d);
+        transition: width 0.2s;
+    }
+
+    /* 🔥 NEW BUTTON STYLE */
+    .play-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        border: 1px solid rgba(127, 90, 240, 0.25);
+        background: rgba(127, 90, 240, 0.15);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s ease;
+        backdrop-filter: blur(10px);
+        box-shadow: inset 0 0 12px rgba(0,0,0,0.4);
+    }
+
+    .play-btn:hover {
+        transform: scale(1.08);
+        background: rgba(127, 90, 240, 0.25);
+        box-shadow: 0 0 18px rgba(127, 90, 240, 0.25);
+    }
+
+    .icon {
+        font-size: 14px;
+        font-weight: 600;
+        transform: translateX(1px);
+    }
+
+    audio {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="card">
+    <img class="pfp" src="pfp.jpeg" alt="Profile Picture">
+
+    <h1>LEBRONGOAT2323</h1>
+
+    <p class="bio">
+        Builder of games, apps & web experiences<br>
+        <span class="skills">HTML • JavaScript • CSS • UI Design • Game Dev</span>
+    </p>
+
+    <div class="music-player">
+        <div class="now-playing">
+            <div class="dot"></div>
+            <span>Now Playing</span>
+        </div>
+
+        <div class="track">
+            <div class="title">BABYDOLL</div>
+            <div class="artist">Dominic Fike</div>
+        </div>
+
+        <div class="controls">
+            <button id="playBtn" class="play-btn">
+                <span class="icon">▶</span>
+            </button>
+
+            <div class="bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        
+        <audio id="audio" src="babydoll.mp3"></audio>
+    </div>
+</div>
+
+<script>
+const audio = document.getElementById("audio");
+const btn = document.getElementById("playBtn");
+const icon = document.querySelector(".icon");
+const progress = document.querySelector(".progress");
+
+let playing = false;
+
+btn.addEventListener("click", async () => {
+    if (!playing) {
+        try {
+            await audio.play();
+            playing = true;
+            icon.textContent = "❚❚";
+        } catch (e) {
+            console.log("Play blocked:", e);
+        }
+    } else {
+        audio.pause();
+        playing = false;
+        icon.textContent = "▶";
+    }
+});
+
+audio.addEventListener("timeupdate", () => {
+    if (!audio.duration) return;
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + "%";
+});
+</script>
+
+</body>
+</html>
