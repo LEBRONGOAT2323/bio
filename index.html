@@ -241,10 +241,15 @@
     <div id="version">v...</div>
 
 <script>
-fetch("https://api.github.com/repos/LEBRONGOAT2323/bio/releases/latest")
+fetch("https://api.github.com/repos/LEBRONGOAT2323/bio/tags")
   .then(res => res.json())
   .then(data => {
-    document.getElementById("version").innerText = data.tag_name;
+    if (!Array.isArray(data) || data.length === 0) {
+      document.getElementById("version").innerText = "v1.0";
+      return;
+    }
+
+    document.getElementById("version").innerText = data[0].name;
   })
   .catch(() => {
     document.getElementById("version").innerText = "v1.0";
